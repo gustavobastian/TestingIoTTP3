@@ -9,10 +9,11 @@ Escenario: Agregar un elemento a una lista vacía
     Entonces la lista tiene 1 elemento(s) almacenado(s)
     Y cuando busco el valor asociado a la clave "clave" el resultado es "valor"
 
-#Escenario: Agregar dos elemento a una lista vacía
-#    Dada una lista vacía
-#    Cuando se agregan  las parejas  {"clave" , "valor"},{"clave2" , "valor2"}
-#    Entonces la lista tiene 2 elemento(s) almacenado(s)
+Escenario: Agregar dos elemento a una lista vacía
+    Dada una lista vacía
+    Cuando se agrega la pareja  {"clave","valor"}
+    Y se agrega la pareja  {"clave2","valor2"}
+    Entonces la lista tiene 2 elemento(s) almacenado(s)
 
 
 #Característica: Busqueda de valores a partir de claves
