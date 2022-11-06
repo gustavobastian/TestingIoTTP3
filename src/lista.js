@@ -47,4 +47,28 @@ module.exports = class Lista{
     list(){
         return this.listaLocal;
     }
+
+    getIndexOf(key){
+
+        let index=null;
+        for (let i=0; i<this.listaLocal.length; i++){
+            if(this.listaLocal[i].key==key){
+                index=i;
+            }
+        }
+        return index;
+    }
+
+    async delete(key){        
+        let retorno= await this.find(key);
+        if(retorno==null){            
+            return false;
+        }
+        else{
+            let index=this.getIndexOf(key);            
+            this.listaLocal.splice(index,1);
+            return true;
+        }
+        
+    }
 }

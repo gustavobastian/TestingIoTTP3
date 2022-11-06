@@ -51,3 +51,20 @@ Then('la lista retorna \\{\\{{string},{string}},\\{{string},{string}},\\{{string
 
         return 'pending';
       });
+
+// Busqueda fallida
+Then('cuando busco el valor asociado a la clave \\{{string}} no cargado retorna falla', function (string) {        // Write code here that turns the phrase above into concrete actions
+        assert.equal(lista.find(string),null);
+      });
+
+// Eliminación de elementos
+When('se elimina la clave \\{{string}}', async function (string) {
+        let response= await lista.delete(string);
+        assert.equal(response,true);            
+      });
+
+// Eliminación de elementos
+When('se elimina la clave \\{{string}} retorna error',async function (string) {
+    let response= await lista.delete(string);
+    assert.equal(response,false);   
+  });      
