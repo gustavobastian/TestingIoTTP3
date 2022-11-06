@@ -1,6 +1,6 @@
 module.exports = class Lista{
     constructor(){        
-        this.listaLocal=[]
+        this.localList=[]
     }
 
     async add(keyP,valueP){            
@@ -29,33 +29,33 @@ module.exports = class Lista{
 
         //special case first element
         if(this.count()==0){
-            this.listaLocal.push(element);
+            this.localList.push(element);
             return true;
         }
         //special case value higher than maximun
-        else if(this.listaLocal[this.count()-1].value<element.value)
+        else if(this.localList[this.count()-1].value<element.value)
         {
 
-            this.listaLocal.push(element);
+            this.localList.push(element);
             return true;
         }
         else{
             let index=0;                
                 
-            while ((parseInt(this.listaLocal[index].value.toString())<parseInt(element.value.toString()))&&(index<this.listaLocal.length-1)){                   
-                auxiliarArray.push(this.listaLocal[index])              
+            while ((parseInt(this.localList[index].value.toString())<parseInt(element.value.toString()))&&(index<this.localList.length-1)){                   
+                auxiliarArray.push(this.localList[index])              
                 index++;
             }
             
             auxiliarArray.push(element)
             
-            while (index<this.listaLocal.length){
-                auxiliarArray.push(this.listaLocal[index]);                
+            while (index<this.localList.length){
+                auxiliarArray.push(this.localList[index]);                
                 index++;
             }
             
 
-            this.listaLocal=auxiliarArray;
+            this.localList=auxiliarArray;
 
         }
 
@@ -64,13 +64,13 @@ module.exports = class Lista{
     }
 
     count(){
-        return this.listaLocal.length;
+        return this.localList.length;
     }
 
     find(keyP){
         let keyLocal={key:keyP}        
         let localValue=null
-        this.listaLocal.forEach(element => {            
+        this.localList.forEach(element => {            
             
             if((element.key)==keyLocal.key)
                 {
@@ -82,15 +82,15 @@ module.exports = class Lista{
     }
 
     list(){
-        return this.listaLocal;
+        return this.localList;
     }
 
     getIndexOf(key){
 
         let index=null;
-        for (let i=0; i<this.listaLocal.length; i++)
+        for (let i=0; i<this.localList.length; i++)
         {
-            if(this.listaLocal[i].key==key)
+            if(this.localList[i].key==key)
             {
                 index=i;
             }
@@ -108,7 +108,7 @@ module.exports = class Lista{
         else
         {
             let index=this.getIndexOf(key);            
-            this.listaLocal.splice(index,1);
+            this.localList.splice(index,1);
             return true;
         }
         
@@ -128,7 +128,7 @@ module.exports = class Lista{
         else
         {
             let index=this.getIndexOf(key);            
-            this.listaLocal[index].value=value;
+            this.localList[index].value=value;
             return true;
         }
     }
