@@ -28,7 +28,7 @@ Escenario: Agregar elemento repetido a una lista
     Dada una lista vacía
     Cuando se agrega la pareja  {"clave","valor"}
     Y se agrega la pareja  {"clave2","valor2"}
-    #Y se agrega la pareja  {"clave","valor"}
+    Y se agrega la pareja  {"clave","valor"}
     Entonces la lista tiene 2 elemento(s) almacenado(s)
 
 

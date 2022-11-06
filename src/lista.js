@@ -14,12 +14,16 @@ module.exports = class Lista{
             return false;
         }
     
-        let elementLocal=this.find(keyP)
-        if((elementLocal.key==element.key)){
+        let elementLocalS=this.find(keyP)
+        
+        
+        if((elementLocalS!=null)){
             return false;
         }
-
-        this.listaLocal.push(element);
+        else
+        { 
+            this.listaLocal.push(element);
+        }
     }
 
     count(){
@@ -28,7 +32,7 @@ module.exports = class Lista{
 
     find(keyP){
         let keyLocal={key:keyP}        
-        let localValue={}
+        let localValue=null
         this.listaLocal.forEach(element => {            
             
             if((element.key)==keyLocal.key)
