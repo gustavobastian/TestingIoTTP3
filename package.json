@@ -1,0 +1,28 @@
+{
+  "name": "bdd",
+  "version": "1.0.0",
+  "description": "Ejemplo de bdd",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js --publish-quiet",
+    "coverage": "nyc --reporter=html cucumber-js --publish-quiet"
+  },
+  "nyc": {
+    "exclude": "features/**" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavobastian/TestingIoTTP3.git"
+  },
+  "author": "Gustavo Bastian",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "^8.7.0",
+    "chai": "^4.3.6",
+    "nyc": "^15.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/gustavobastian/TestingIoTTP3/issues"
+  },
+  "homepage": "https://github.com/gustavobastian/TestingIoTTP3#readme"
+}
