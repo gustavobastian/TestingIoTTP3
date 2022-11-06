@@ -34,22 +34,22 @@ Then('la lista tiene {int} elemento\\(s) almacenado\\(s)', (value)=>{
     });
 
 
-Then('la lista retorna \\{\\{{string},{string}},\\{{string},{string}},\\{{string},{string}}}',  (string, string2, string3, string4, string5, string6) =>{
-        // Write code here that turns the phrase above into concrete actions
+Then('la lista retorna \\{\\{{string},{string}},\\{{string},{string}},\\{{string},{string}}}', async (string, string2, string3, string4, string5, string6) =>{
+        
         let responseArray=[];
-        responseArray.push({key:string,value:string2})
-        responseArray.push({key:string3,value:string4})
-        responseArray.push({key:string5,value:string6})
+        await responseArray.push({key:string,value:string2});
+        await responseArray.push({key:string3,value:string4});
+        await responseArray.push({key:string5,value:string6});
 
-        responseArrayLocal=lista.list()
+        let responseArrayLocal=await lista.list();        
 
         for( let i=0; i<responseArray.length; i++)
         {
-        //    assert.equal(responseArrayLocal[i],responseArray[i]);
-        }
-        
+            assert.equal(responseArrayLocal[i].value,responseArray[i].value);
+            assert.equal(responseArrayLocal[i].key,responseArray[i].key);
+        }        
 
-        return 'pending';
+        
       });
 
 // Busqueda fallida
