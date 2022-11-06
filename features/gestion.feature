@@ -38,6 +38,7 @@ Escenario: Eliminar un elemento que existe
     Y se agrega la pareja  {"clave3","valor3"}
     Y se elimina la clave {"clave"}
     Entonces la lista tiene 2 elemento(s) almacenado(s)
+    Y cuando busco el valor asociado a la clave {'clave'} no cargado retorna falla
 
 
 Escenario: Eliminar un elemento que no existe

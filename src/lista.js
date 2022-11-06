@@ -3,18 +3,14 @@ module.exports = class Lista{
         this.listaLocal=[]
     }
 
-    add(keyP,valueP){            
+    async add(keyP,valueP){            
         let element={key:keyP,value:valueP}
 
-        if(keyP==null || valueP==null){
-            return false;
-        }
-
-        if(keyP=="" || valueP==""){
+        if(keyP==null || valueP==null || keyP=="" || valueP==""){
             return false;
         }
     
-        let elementLocalS=this.find(keyP)
+        let elementLocalS=await this.find(keyP)
         
         
         if((elementLocalS!=null)){
