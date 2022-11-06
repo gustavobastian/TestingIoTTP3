@@ -6,9 +6,9 @@ module.exports = class Lista{
     async add(keyP,valueP){            
         let element={key:keyP,value:valueP}
 
-        if(keyP==null || valueP==null || keyP=="" || valueP==""){
+        if(((keyP==null) || (valueP==null))||(typeof(keyP)!='string')||(typeof(valueP)!='string')||(valueP=="")||(keyP=="")){
             return false;
-        }
+        }       
     
         let elementLocalS=await this.find(keyP)
         
@@ -68,7 +68,11 @@ module.exports = class Lista{
         
     }
     async update(key,value){
+        if(((key==null) || (value==null))||(typeof(key)!='string')||(typeof(value)!='string')||(value=="")||(key=="")){
+            return false;
+        }       
         let retorno= await this.find(key);
+
         if(retorno==null){            
             return false;
         }
