@@ -67,4 +67,15 @@ module.exports = class Lista{
         }
         
     }
+    async update(key,value){
+        let retorno= await this.find(key);
+        if(retorno==null){            
+            return false;
+        }
+        else{
+            let index=this.getIndexOf(key);            
+            this.listaLocal[index].value=value;
+            return true;
+        }
+    }
 }

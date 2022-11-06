@@ -49,3 +49,18 @@ Escenario: Eliminar un elemento que no existe
     Y se elimina la clave {"clave10"} retorna error
     Entonces la lista tiene 3 elemento(s) almacenado(s)
 
+Escenario: actualizo valor de clave
+    Dada una lista vacía
+    Cuando se agrega la pareja  {"clave","valor"}
+    Y se agrega la pareja  {"clave2","valor2"}
+    Y se agrega la pareja  {"clave3","valor3"}
+    Y se modifica la clave {"clave2","valor7"} 
+    Y cuando busco el valor asociado a la clave "clave2" el resultado es "valor7"
+
+Escenario: actualizo valor de clave inexistente
+    Dada una lista vacía
+    Cuando se agrega la pareja  {"clave","valor"}
+    Y se agrega la pareja  {"clave2","valor2"}
+    Y se agrega la pareja  {"clave3","valor3"}
+    Y se modifica la clave {"clave10","valor7"} da error
+    

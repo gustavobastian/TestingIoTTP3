@@ -34,7 +34,7 @@ Then('la lista tiene {int} elemento\\(s) almacenado\\(s)', (value)=>{
     });
 
 
-Then('la lista retorna \\{\\{{string},{string}},\\{{string},{string}},\\{{string},{string}}}', function (string, string2, string3, string4, string5, string6) {
+Then('la lista retorna \\{\\{{string},{string}},\\{{string},{string}},\\{{string},{string}}}',  (string, string2, string3, string4, string5, string6) =>{
         // Write code here that turns the phrase above into concrete actions
         let responseArray=[];
         responseArray.push({key:string,value:string2})
@@ -53,7 +53,7 @@ Then('la lista retorna \\{\\{{string},{string}},\\{{string},{string}},\\{{string
       });
 
 // Busqueda fallida
-Then('cuando busco el valor asociado a la clave \\{{string}} no cargado retorna falla', function (string) {        // Write code here that turns the phrase above into concrete actions
+Then('cuando busco el valor asociado a la clave \\{{string}} no cargado retorna falla', (string)=>{        // Write code here that turns the phrase above into concrete actions
         assert.equal(lista.find(string),null);
       });
 
@@ -68,3 +68,18 @@ When('se elimina la clave \\{{string}} retorna error',async function (string) {
     let response= await lista.delete(string);
     assert.equal(response,false);   
   });      
+
+
+//alteración de valores
+When('se modifica la clave \\{{string},{string}}', async function (string, string2) {
+    
+    let response= await lista.update(string,string2);
+    assert.equal(response,true);  
+    
+  });  
+
+When('se modifica la clave \\{{string},{string}} da error', async function (string, string2) {
+    // Write code here that turns the phrase above into concrete actions
+    let response= await lista.update(string,string2);
+    assert.equal(response,false);  
+  });  
