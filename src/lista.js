@@ -10,6 +10,7 @@ module.exports = class Lista{
     count(){
         return this.listaLocal.length;
     }
+
     find(keyP){
         let keyLocal={key:keyP}        
         let localValue={}
@@ -22,5 +23,9 @@ module.exports = class Lista{
                 }
         });
         return localValue;
+    }
+
+    list(){
+        return this.listaLocal;
     }
 }

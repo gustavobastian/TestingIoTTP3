@@ -16,11 +16,9 @@ Escenario: Agregar dos elemento a una lista vacía
     Entonces la lista tiene 2 elemento(s) almacenado(s)
 
 
-#Característica: Busqueda de valores a partir de claves
 
-#Escenario: Agregar un elemento a una lista vacía
-#    Dada una lista vacía
-#    Cuando se agrega la pareja  {"clave" , "valor"}
-#    Entonces la lista tiene 1 elemento(s) almacenado(s)
+
+
+
 
 #Característica: Recuperar lista ordenada con las claves

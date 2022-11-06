@@ -32,3 +32,22 @@ Then('cuando busco el valor asociado a la clave {} el resultado es {}',(key,resp
 Then('la lista tiene {int} elemento\\(s) almacenado\\(s)', function (value) {
       assert.equal(lista.count(),value);
     });
+
+
+    Then('la lista retorna \\{\\{{string},{string}},\\{{string},{string}},\\{{string},{string}}}', function (string, string2, string3, string4, string5, string6) {
+        // Write code here that turns the phrase above into concrete actions
+        let responseArray=[];
+        responseArray.push({key:string,value:string2})
+        responseArray.push({key:string3,value:string4})
+        responseArray.push({key:string5,value:string6})
+
+        responseArrayLocal=lista.list()
+
+        for( let i=0; i<responseArray.length; i++)
+        {
+            assert.equal(responseArrayLocal[i],responseArray[i]);
+        }
+        
+
+        return 'pending';
+      });
