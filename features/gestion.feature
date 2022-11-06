@@ -15,10 +15,23 @@ Escenario: Agregar dos elemento a una lista vacía
     Y se agrega la pareja  {"clave2","valor2"}
     Entonces la lista tiene 2 elemento(s) almacenado(s)
 
+Escenario: Agregar elemento con un campo vacío 
+    Dada una lista vacía
+    Cuando se agrega la pareja  {"clave","valor"}
+    Y se agrega la pareja  {"clave2","valor2"}
+    Y se agrega la pareja  {"clave",""}
+    Y se agrega la pareja  {"","valor"}
+    Entonces la lista tiene 2 elemento(s) almacenado(s)
+
+
+Escenario: Agregar elemento repetido a una lista 
+    Dada una lista vacía
+    Cuando se agrega la pareja  {"clave","valor"}
+    Y se agrega la pareja  {"clave2","valor2"}
+    #Y se agrega la pareja  {"clave","valor"}
+    Entonces la lista tiene 2 elemento(s) almacenado(s)
 
 
 
 
 
-
-#Característica: Recuperar lista ordenada con las claves

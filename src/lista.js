@@ -5,8 +5,23 @@ module.exports = class Lista{
 
     add(keyP,valueP){            
         let element={key:keyP,value:valueP}
+
+        if(keyP==null || valueP==null){
+            return false;
+        }
+
+        if(keyP=="" || valueP==""){
+            return false;
+        }
+    
+        let elementLocal=this.find(keyP)
+        if((elementLocal.key==element.key)){
+            return false;
+        }
+
         this.listaLocal.push(element);
     }
+
     count(){
         return this.listaLocal.length;
     }
