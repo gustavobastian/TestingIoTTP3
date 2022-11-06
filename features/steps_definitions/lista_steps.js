@@ -11,13 +11,23 @@ Given('una lista vacía',()=>{
 
 
 When('se agrega la pareja {}',(word)=>{
-    keyvalue=word.split("{")
-    keyvalue=keyvalue[1].split("}")
-    key=keyvalue[0];
-    value=keyvalue[1];
+       
+    
+    let data=word.split(",")
+    let data2=data[0].split("\"")
+    let data3=data[1].split("\"")
+    let key=(data2[1])
+    let value=(data3[1])
+    
+    
     lista.add(key,value);  
-
 });
+
+Then('cuando busco el valor asociado a la clave {} el resultado es {}',(key,response)=>{    
+    let data=key.split("\"")
+    assert.equal(lista.find(data[1]),response);
+});
+
 
 Then('la lista tiene {int} elemento\\(s) almacenado\\(s)', function (value) {
       assert.equal(lista.count(),value);
