@@ -3,6 +3,7 @@ module.exports = class Lista{
         this.localList=[]
     }
 
+    //adding elements to the list
     async add(keyP,valueP){            
         let element={key:keyP,value:valueP}
         let result=false;
@@ -62,7 +63,7 @@ module.exports = class Lista{
 
         return result;
     }
-
+    //size of the list
     count(){
         return this.localList.length;
     }
@@ -80,11 +81,11 @@ module.exports = class Lista{
         });
         return localValue;
     }
-
+    //return of the ordered list
     list(){
         return this.localList;
     }
-
+    //looking for the index
     getIndexOf(key){
 
         let index=null;
@@ -97,7 +98,7 @@ module.exports = class Lista{
         }
         return index;
     }
-
+    //removing an element from the list
     async delete(key)
     {        
         let retorno= await this.find(key);
@@ -113,6 +114,7 @@ module.exports = class Lista{
         }
         
     }
+    //updating an element in the list
     async update(key,value)
     {
         if(((key==null) || (value==null))||(typeof(key)!='string')||(typeof(value)!='string')||(value=="")||(key==""))
