@@ -83,8 +83,14 @@ module.exports = class Lista{
     }
     //return of the ordered list
     list(){
-        return this.localList;
+        let output=[]
+        this.localList.forEach(element => 
+        {
+            output.push({'clave':element.clave})
+        });        
+        return   output;        
     }
+    
     //looking for the index
     getIndexOf(key){
 

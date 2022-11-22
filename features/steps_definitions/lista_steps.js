@@ -1,7 +1,7 @@
 const {Giver, When, Then, Given} = require('@cucumber/cucumber')
 const expect= require('chai').expect;
 const assert= require('chai').assert;
-const Lista = require("../../src/lista");
+const Lista = require("../../src/lista-corrected.sjs");
 var lista;
 
 Given('una lista vacía',()=>
@@ -30,7 +30,7 @@ Then('la lista tiene {int} elemento\\(s) almacenado\\(s)', (value)=>
 {
   assert.equal(lista.count(),value);
 });
-
+/*
 Then('la lista retorna \\{\\{{string},{string}},\\{{string},{string}},\\{{string},{string}}}', async (string, string2, string3, string4, string5, string6) =>
 {
         
@@ -78,3 +78,4 @@ When('se modifica la clave \\{{string},{string}} da error', async function (stri
   let response= await lista.update(string,string2);
   assert.equal(response,false);  
 });  
+*/
