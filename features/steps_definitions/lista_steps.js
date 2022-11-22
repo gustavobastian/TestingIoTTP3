@@ -26,24 +26,29 @@ Then('la lista tiene {int} elemento\\(s) almacenado\\(s)', (value)=>
 {
   assert.equal(lista.count(),value);    
 });
-/*
-Then('la lista retorna \\{\\{{string},{string}},\\{{string},{string}},\\{{string},{string}}}', async (string, string2, string3, string4, string5, string6) =>
+
+Then('la lista retorna {}', (word) =>
 {
-        
-  let responseArray=[];
-  await responseArray.push({key:string,value:string2});
-  await responseArray.push({key:string3,value:string4});
-  await responseArray.push({key:string5,value:string6});
-  let responseArrayLocal=await lista.list();        
+  let word2=word.split("[")
+  let word3=word2[1].split("]")
+  let data =[];
+  data=(word3[0]).split(",");  
+  let responseArray=[]
+  data.forEach(element => 
+  {
+    let element2=element.split("\"");
+    responseArray.push(element2[1]);      
+  });  
+  
+  let responseArrayLocal=lista.getList();        
   for( let i=0; i<responseArray.length; i++)
   {
-    assert.equal(responseArrayLocal[i].value,responseArray[i].value);
-    assert.equal(responseArrayLocal[i].key,responseArray[i].key);
+    assert.equal(responseArrayLocal[i],responseArray[i]);    
   }     
 });
-*/
+
 // Busqueda fallida
-Then('cuando busco el valor asociado a la clave \\{{string}} no cargado retorna falla', (string)=>
+Then('cuando busco el valor asociado a la clave {} no cargado retorna falla', (string)=>
 {
    assert.equal(lista.find(string),null);
 });

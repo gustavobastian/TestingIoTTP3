@@ -51,10 +51,11 @@ module.exports = class Lista
     getList()
     {
         let output=[]
-        this.localList.forEach(element => 
+        this.Elementos.forEach(element => 
         {
-            output.push({'clave':element.clave})
+            output.push(element.clave)
         });        
+        output.sort();        
         return   output;        
     }   
  
