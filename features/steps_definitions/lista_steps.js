@@ -3,7 +3,7 @@ const expect= require('chai').expect;
 const assert= require('chai').assert;
 const Lista = require("../../src/lista.js");
 var lista;
-
+var respuestaGeneral;
 Given('una lista vacía',()=>
 {
     lista=new Lista();    
@@ -15,10 +15,32 @@ When('se agrega la pareja {}',(word)=>
   lista.add(data.clave,data.valor);  
 });
 
-Then('cuando busco el valor asociado a la clave {} el resultado es {}',(clave,respuesta)=>
-{       
-  data=clave.split("\"")  
-  assert.equal(lista.find(data[1]),respuesta);
+When('busco el valor asociado a la clave {}',(clave)=>
+{ let data=[];    
+  if(clave!=null)
+  {
+    data=clave.split("\"")  
+  }
+  else 
+  {
+    data.push(null)
+    data.push(null)
+  }
+    
+  respuestaGeneral= lista.find(data[1]);
+});
+
+Then('La respuesta es {}',(pasaje)=>
+{ 
+  if(pasaje=='null')
+  {
+    pasaje=null;
+  }
+  if(respuestaGeneral=='null')
+  {
+    respuestaGeneral=null;
+  }
+  assert.equal(pasaje,respuestaGeneral);
 });
 
 Then('la lista tiene {int} elemento\\(s) almacenado\\(s)', (value)=>
@@ -46,11 +68,11 @@ Then('la lista retorna {}', (word) =>
   }     
 });
 
-
+/*
 Then('cuando busco el valor asociado a la clave {} no cargado retorna falla', (string)=>
 {
     assert.equal(lista.find(string),null);
-});
+});*/
 
 
 When('se elimina la clave \\{{string}}', async function (string) 
