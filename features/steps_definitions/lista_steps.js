@@ -11,19 +11,15 @@ Given('una lista vacía',()=>
 
 
 When('se agrega la pareja {}',(word)=>
-{   
-  let data=word.split(",")
-  let data2=data[0].split("\"")
-  let data3=data[1].split("\"")
-  let key=(data2[1])
-  let value=(data3[1])
-  lista.add(key,value);  
+{     
+  data = JSON.parse(word);  
+  lista.add(data.clave,data.valor);  
 });
 
-Then('cuando busco el valor asociado a la clave {} el resultado es {}',(key,response)=>
-{    
-  let data=key.split("\"")
-  assert.equal(lista.find(data[1]),response);
+Then('cuando busco el valor asociado a la clave {} el resultado es {}',(clave,respuesta)=>
+{       
+  data=clave.split("\"")  
+  assert.equal(lista.find(data[1]),respuesta);
 });
 
 Then('la lista tiene {int} elemento\\(s) almacenado\\(s)', (value)=>

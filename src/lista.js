@@ -1,23 +1,42 @@
-module.exports = class Lista{
-    constructor(){        
+module.exports = class Lista
+{
+    constructor()
+    {        
         this.Elementos=[]
     }
 
-     add(keyP,valueP){            
-        let element={"clave":keyP,"valor":valueP}        
+     add(clave,valor)
+     {            
+        console.log("clave:",clave)
+        let element={"clave":clave,"valor":valor}           
         this.Elementos.push(element);
         return true;
     }
 
-    count(){
-        return 1;
+    count()
+    {
+        return this.Elementos.length;
     }
 
-    find(keyP){
+    find(clave)
+    {   
+        console.log(clave);
+        let output=null;
+        let index=this.getIndexOf(clave);
+        if  (index!=null)
+        {
+            output=this.Elementos[index];
+            return output;
+        }
+        else
+        {
+            return output;
+        }     
        
     }
     
-    getList(){
+    getList()
+    {
         let output=[]
         this.localList.forEach(element => 
         {
@@ -26,12 +45,12 @@ module.exports = class Lista{
         return   output;        
     }   
  
-    getIndexOf(clave){
-
+    getIndexOf(clave)
+    {
         let index=null;
-        for (let i=0; i<this.localList.length; i++)
+        for (let i=0; i<this.Elementos.length; i++)
         {
-            if(this.localList[i].clave==clave)
+            if(this.Elementos[i].clave==clave)
             {
                 index=i;
             }
