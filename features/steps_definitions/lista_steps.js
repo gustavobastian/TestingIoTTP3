@@ -12,7 +12,7 @@ Given('una lista vacía',()=>
 
 When('se agrega la pareja {}',(word)=>
 {     
-  data = JSON.parse(word);  
+  data = JSON.parse(word);   
   lista.add(data.clave,data.valor);  
 });
 
@@ -24,7 +24,7 @@ Then('cuando busco el valor asociado a la clave {} el resultado es {}',(clave,re
 
 Then('la lista tiene {int} elemento\\(s) almacenado\\(s)', (value)=>
 {
-  assert.equal(lista.count(),value);
+  assert.equal(lista.count(),value);  
 });
 /*
 Then('la lista retorna \\{\\{{string},{string}},\\{{string},{string}},\\{{string},{string}}}', async (string, string2, string3, string4, string5, string6) =>

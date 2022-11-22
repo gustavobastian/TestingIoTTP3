@@ -7,10 +7,16 @@ module.exports = class Lista
 
     add(clave,valor)
     {            
-        console.log("clave:",clave)
-        let element={"clave":clave,"valor":valor}           
-        this.Elementos.push(element);
-        return true;
+        if(clave!=null && valor!=null)
+        {
+            let element={"clave":clave,"valor":valor}           
+            this.Elementos.push(element);
+            return true;
+        }
+        else
+        {
+            return false;
+        }       
     }
 
     count()

@@ -15,13 +15,14 @@ Escenario: Agregar dos elemento a una lista vacía
     Y se agrega la pareja  {"clave":"clave2","valor":"valor2"}
     Entonces la lista tiene 2 elemento(s) almacenado(s)
 
-#Escenario: Agregar elemento con un campo vacío 
-#    Dada una lista vacía
-#    Cuando se agrega la pareja  {"clave","valor"}
-#    Y se agrega la pareja  {"clave2","valor2"}
-#    Y se agrega la pareja  {"clave",""}
-#    Y se agrega la pareja  {"","valor"}
-#    Entonces la lista tiene 2 elemento(s) almacenado(s)
+Escenario: Agregar elemento con un campo vacío 
+    Dada una lista vacía
+    Cuando se agrega la pareja  {"clave":"clave","valor":"valor"}
+    Y se agrega la pareja  {"clave":"clave2","valor":"valor2"}
+    Y se agrega la pareja  {"clave":"clave5","valor":"valor5"}
+    Y se agrega la pareja  {"clave":"clave3","valor": null}
+    Y se agrega la pareja  {"clave":null,"valor": "valor4"}
+    Entonces la lista tiene 3 elemento(s) almacenado(s)
 
 
 #Escenario: Agregar elemento repetido a una lista 
