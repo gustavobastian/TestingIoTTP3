@@ -4,10 +4,21 @@ const assert= require('chai').assert;
 const Lista = require("../../src/lista.js");
 var lista;
 var respuestaGeneral;
+var respuestaOperacion;
 Given('una lista vacía',()=>
 {
     lista=new Lista();    
 });
+
+Given('una lista con 3 elementos',()=>
+{
+    lista=new Lista();    
+    lista.add("clave","valor");  
+    lista.add("clave2","valor2");  
+    lista.add("clave3","valor3");  
+});
+
+
 
 When('se agrega la pareja {}',(word)=>
 {     
@@ -68,38 +79,22 @@ Then('la lista retorna {}', (word) =>
   }     
 });
 
-/*
-Then('cuando busco el valor asociado a la clave {} no cargado retorna falla', (string)=>
+When('se elimina la clave \\{{string}}', function (string) 
 {
-    assert.equal(lista.find(string),null);
-});*/
-
-
-When('se elimina la clave \\{{string}}', async function (string) 
-{
-    let response= await lista.delete(string);
-    assert.equal(response,true);            
+  respuestaOperacion= lista.delete(string);    
 });
 
-
-When('se elimina la clave \\{{string}} retorna error',async function (string) 
-{
-    let response= await lista.delete(string);
-    assert.equal(response,false);   
-});      
-
+Then ('operacion retorna error', function(){
+  assert.equal(respuestaOperacion,false);   
+})
+Then ('operacion retorna hecho', function(){
+  assert.equal(respuestaOperacion,true);   
+})
 
 When('se modifica el elemento {}', async function (word) 
 {
   data = JSON.parse(word);   
-  let response= await lista.update(data.clave,data.valor);
-  assert.equal(response,true);  
+  respuestaOperacion= await lista.update(data.clave,data.valor);  
 });  
 
-When('se trata de modificar el elemento inexistente {} da error', async function (word) 
-{
-  data = JSON.parse(word);   
-  let response= await lista.update(data.clave,data.valor);
-  assert.equal(response,false);  
-});  
 
