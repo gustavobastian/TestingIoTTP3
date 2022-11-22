@@ -9,7 +9,6 @@ Given('una lista vacía',()=>
     lista=new Lista();    
 });
 
-
 When('se agrega la pareja {}',(word)=>
 {     
   data = JSON.parse(word);   
@@ -47,27 +46,27 @@ Then('la lista retorna {}', (word) =>
   }     
 });
 
-// Busqueda fallida
+
 Then('cuando busco el valor asociado a la clave {} no cargado retorna falla', (string)=>
 {
-   assert.equal(lista.find(string),null);
+    assert.equal(lista.find(string),null);
 });
 
-// Eliminación de elementos
+
 When('se elimina la clave \\{{string}}', async function (string) 
 {
-  let response= await lista.delete(string);
-  assert.equal(response,true);            
+    let response= await lista.delete(string);
+    assert.equal(response,true);            
 });
 
-// Eliminación de elementos
+
 When('se elimina la clave \\{{string}} retorna error',async function (string) 
 {
-  let response= await lista.delete(string);
-  assert.equal(response,false);   
+    let response= await lista.delete(string);
+    assert.equal(response,false);   
 });      
 
-//alteración de valores
+
 When('se modifica el elemento {}', async function (word) 
 {
   data = JSON.parse(word);   
