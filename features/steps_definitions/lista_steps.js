@@ -61,17 +61,19 @@ When('se elimina la clave \\{{string}} retorna error',async function (string)
   let response= await lista.delete(string);
   assert.equal(response,false);   
 });      
-/*
+
 //alteración de valores
-When('se modifica la clave \\{{string},{string}}', async function (string, string2) 
+When('se modifica el elemento {}', async function (word) 
 {
-  let response= await lista.update(string,string2);
+  data = JSON.parse(word);   
+  let response= await lista.update(data.clave,data.valor);
   assert.equal(response,true);  
 });  
 
-When('se modifica la clave \\{{string},{string}} da error', async function (string, string2) 
+When('se modifica el elemento {} da error', async function (word) 
 {
-  let response= await lista.update(string,string2);
+  data = JSON.parse(word);   
+  let response= await lista.update(data.clave,data.valor);
   assert.equal(response,false);  
 });  
-*/
+

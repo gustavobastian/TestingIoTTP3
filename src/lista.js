@@ -87,6 +87,15 @@ module.exports = class Lista
     
     update(clave,valor)
     {
-       return 1; 
+        let indice=this.getIndexOf(clave)
+        if (indice!=null)
+        {   
+            this.Elementos[indice].valor=valor;
+            return true;
+        }
+        else
+        {            
+            return false;
+        }
     }
 }
