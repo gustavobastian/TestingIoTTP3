@@ -33,23 +33,23 @@ Escenario: Agregar elemento con clave repetida a una lista
     Y se agrega la pareja  {"clave":"clave","valor":"valor3"}
     Entonces la lista tiene 3 elemento(s) almacenado(s)
 
-#Escenario: Eliminar un elemento que existe
-#    Dada una lista vacía
-#    Cuando se agrega la pareja  {"clave","valor"}
-#    Y se agrega la pareja  {"clave2","valor2"}
-#    Y se agrega la pareja  {"clave3","valor3"}
-#    Y se elimina la clave {"clave"}
-#    Entonces la lista tiene 2 elemento(s) almacenado(s)
-#    Y cuando busco el valor asociado a la clave {'clave'} no cargado retorna falla
+Escenario: Eliminar un elemento que existe
+    Dada una lista vacía
+    Cuando se agrega la pareja  {"clave":"clave","valor":"valor"}
+    Y se agrega la pareja  {"clave":"clave2","valor":"valor2"}
+    Y se agrega la pareja  {"clave":"clave3","valor":"valor3"}
+    Y se elimina la clave {"clave"}
+    Entonces la lista tiene 2 elemento(s) almacenado(s)
+    Y cuando busco el valor asociado a la clave {"clave"} no cargado retorna falla
 
 
-#Escenario: Eliminar un elemento que no existe
-#    Dada una lista vacía
-#    Cuando se agrega la pareja  {"clave","valor"}
-#    Y se agrega la pareja  {"clave2","valor2"}
-#    Y se agrega la pareja  {"clave3","valor3"}
-#    Y se elimina la clave {"clave10"} retorna error
-#    Entonces la lista tiene 3 elemento(s) almacenado(s)
+Escenario: Eliminar un elemento que no existe
+    Dada una lista vacía
+    Cuando se agrega la pareja  {"clave":"clave","valor":"valor"}
+    Y se agrega la pareja  {"clave":"clave2","valor":"valor2"}
+    Y se agrega la pareja  {"clave":"clave3","valor":"valor3"}
+    Y se elimina la clave {"clave10"} retorna error
+    Entonces la lista tiene 3 elemento(s) almacenado(s)
 
 #Escenario: actualizo valor de clave
 #    Dada una lista vacía

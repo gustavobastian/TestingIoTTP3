@@ -34,8 +34,7 @@ module.exports = class Lista
     }
 
     find(clave)
-    {   
-        console.log(clave);
+    {          
         let output=null;
         let index=this.getIndexOf(clave);
         if  (index!=null)
@@ -74,7 +73,16 @@ module.exports = class Lista
     
     delete(clave)
     {       
-       return 1;
+        let resultado= this.getIndexOf(clave);                        
+        if (resultado==null)
+        {            
+            return false;
+        }
+        else
+        {            
+            this.Elementos.splice(resultado,1)
+            return true;
+        }
     }
     
     update(clave,valor)

@@ -41,7 +41,7 @@ Then('la lista retorna \\{\\{{string},{string}},\\{{string},{string}},\\{{string
     assert.equal(responseArrayLocal[i].key,responseArray[i].key);
   }     
 });
-
+*/
 // Busqueda fallida
 Then('cuando busco el valor asociado a la clave \\{{string}} no cargado retorna falla', (string)=>
 {
@@ -61,7 +61,7 @@ When('se elimina la clave \\{{string}} retorna error',async function (string)
   let response= await lista.delete(string);
   assert.equal(response,false);   
 });      
-
+/*
 //alteración de valores
 When('se modifica la clave \\{{string},{string}}', async function (string, string2) 
 {
