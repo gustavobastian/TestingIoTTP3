@@ -70,7 +70,7 @@ When('se modifica el elemento {}', async function (word)
   assert.equal(response,true);  
 });  
 
-When('se modifica el elemento {} da error', async function (word) 
+When('se trata de modificar el elemento inexistente {} da error', async function (word) 
 {
   data = JSON.parse(word);   
   let response= await lista.update(data.clave,data.valor);
