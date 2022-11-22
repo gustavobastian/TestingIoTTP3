@@ -31,7 +31,7 @@ module.exports = class Lista
         let index=this.getIndexOf(clave);
         if  (index!=null)
         {
-            output=this.Elementos[index];
+            output=this.Elementos[index].valor;
             return output;
         }
         else

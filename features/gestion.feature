@@ -15,7 +15,7 @@ Escenario: Agregar dos elemento a una lista vacía
     Y se agrega la pareja  {"clave":"clave2","valor":"valor2"}
     Entonces la lista tiene 2 elemento(s) almacenado(s)
 
-Escenario: Agregar elemento con un campo vacío 
+Escenario: Agregar elemento con un campo vacío no debe incorporar el elemento
     Dada una lista vacía
     Cuando se agrega la pareja  {"clave":"clave","valor":"valor"}
     Y se agrega la pareja  {"clave":"clave2","valor":"valor2"}
@@ -25,12 +25,13 @@ Escenario: Agregar elemento con un campo vacío
     Entonces la lista tiene 3 elemento(s) almacenado(s)
 
 
-#Escenario: Agregar elemento repetido a una lista 
+#Escenario: Agregar elemento con clave repetida a una lista 
 #    Dada una lista vacía
-#    Cuando se agrega la pareja  {"clave","valor"}
-#    Y se agrega la pareja  {"clave2","valor2"}
-#    Y se agrega la pareja  {"clave","valor"}
-#    Entonces la lista tiene 2 elemento(s) almacenado(s)
+#    Cuando se agrega la pareja  {"clave":"clave","valor":"valor"}
+#    Y se agrega la pareja  {"clave":"clave2","valor":"valor2"}
+#    Y se agrega la pareja  {"clave":"clave1","valor":"valor1"}
+#    Y se agrega la pareja  {"clave":"clave","valor":"valor3"}
+#    Entonces la lista tiene 3 elemento(s) almacenado(s)
 
 #Escenario: Eliminar un elemento que existe
 #    Dada una lista vacía
