@@ -5,8 +5,8 @@ module.exports = class Lista
         this.Elementos=[]
     }
 
-     add(clave,valor)
-     {            
+    add(clave,valor)
+    {            
         console.log("clave:",clave)
         let element={"clave":clave,"valor":valor}           
         this.Elementos.push(element);
