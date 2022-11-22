@@ -6,17 +6,26 @@ module.exports = class Lista
     }
 
     add(clave,valor)
-    {            
-        if(clave!=null && valor!=null)
+    {       
+        let index=null;     
+        if (clave==null || valor==null)
         {
-            let element={"clave":clave,"valor":valor}           
-            this.Elementos.push(element);
-            return true;
+            return false;            
         }
         else
         {
-            return false;
-        }       
+            index=this.getIndexOf(clave);  
+            if (index!=null)
+            {
+                return false;
+            }
+            else 
+            {
+                let element={"clave":clave,"valor":valor}           
+                this.Elementos.push(element);
+                return true;
+            }
+        }            
     }
 
     count()
@@ -37,8 +46,7 @@ module.exports = class Lista
         else
         {
             return output;
-        }     
-       
+        }            
     }
     
     getList()
