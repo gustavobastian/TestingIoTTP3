@@ -19,6 +19,12 @@ Given('una lista con 3 elementos',()=>
 });
 
 
+When('se modifica el elemento {}', async function (word) 
+{
+  data = JSON.parse(word);   
+  respuestaOperacion= await lista.update(data.clave,data.valor);  
+});  
+
 
 When('se agrega la pareja {}',(word)=>
 {     
@@ -90,11 +96,5 @@ Then ('operacion retorna error', function(){
 Then ('operacion retorna hecho', function(){
   assert.equal(respuestaOperacion,true);   
 })
-
-When('se modifica el elemento {}', async function (word) 
-{
-  data = JSON.parse(word);   
-  respuestaOperacion= await lista.update(data.clave,data.valor);  
-});  
 
 
